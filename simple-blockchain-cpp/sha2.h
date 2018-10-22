@@ -72,7 +72,7 @@ constexpr void sha2_unpack32(T1 x, T2 * str)
 template <typename T1, typename T2>
 constexpr void sha2_pack32(T1 * str, T2 x)
 {
-	*x = static_cast<std::uint32_t>(str[3]) | static_cast<std::uint32_t>(str[2] << 8) | static_cast<std::uint32_t>(str[1] << 16) | static_cast<std::uint32_t>(str[0] << 24);
+	*x = (static_cast<std::uint32_t>(str[3])) | ((static_cast<std::uint32_t>(str[2])) << 8) | ((static_cast<std::uint32_t>(str[1])) << 16) | ((static_cast<std::uint32_t>(str[0])) << 24);
 }
 
 template <typename T1, typename T2>
@@ -91,8 +91,8 @@ constexpr void sha2_unpack64(T1 x, T2 * str)
 template <typename T1, typename T2>
 constexpr void sha2_pack64(T1 * str, T2 x)
 {
-	*x = static_cast<std::uint64_t>(str[7]) | static_cast<std::uint64_t>(str[6] << 8) | static_cast<std::uint64_t>(str[5] << 16) | static_cast<std::uint64_t>(str[4] << 24)
-		| static_cast<std::uint64_t>(str[3] << 32) | static_cast<std::uint64_t>(str[2] << 40) | static_cast<std::uint64_t>(str[1] << 48) | static_cast<std::uint64_t>(str[0] << 56);
+	*x = (static_cast<std::uint64_t>(str[7])) | ((static_cast<std::uint64_t>(str[6])) << 8) | ((static_cast<std::uint64_t>(str[5])) << 16) | ((static_cast<std::uint64_t>(str[4])) << 24)
+		| ((static_cast<std::uint64_t>(str[3])) << 32) | ((static_cast<std::uint64_t>(str[2])) << 40) | ((static_cast<std::uint64_t>(str[1])) << 48) | ((static_cast<std::uint64_t>(str[0])) << 56);
 }
 
 

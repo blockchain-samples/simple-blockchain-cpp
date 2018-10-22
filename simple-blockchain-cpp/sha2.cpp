@@ -288,7 +288,7 @@ std::string sha224(const std::string & input)
 
 	SHA224 ctx = SHA224();
 	ctx.init();
-	ctx.update(input.data(), input.length());
+	ctx.update(input.data(), static_cast<unsigned int>(input.length()));
 	ctx.final(digest);
 
 	char buf[2 * SHA224::DIGEST_SIZE + 1];
@@ -305,7 +305,7 @@ std::string sha256(const std::string & input)
 
 	SHA256 ctx = SHA256();
 	ctx.init();
-	ctx.update(input.data(), input.length());
+	ctx.update(input.data(), static_cast<unsigned int>(input.length()));
 	ctx.final(digest);
 
 	char buf[2 * SHA256::DIGEST_SIZE + 1];
@@ -322,7 +322,7 @@ std::string sha384(const std::string & input)
 
 	SHA384 ctx = SHA384();
 	ctx.init();
-	ctx.update(input.data(), input.length());
+	ctx.update(input.data(), static_cast<unsigned int>(input.length()));
 	ctx.final(digest);
 
 	char buf[2 * SHA384::DIGEST_SIZE + 1];
@@ -339,7 +339,7 @@ std::string sha512(const std::string & input)
 
 	SHA512 ctx = SHA512();
 	ctx.init();
-	ctx.update(input.data(), input.length());
+	ctx.update(input.data(), static_cast<unsigned int>(input.length()));
 	ctx.final(digest);
 
 	char buf[2 * SHA512::DIGEST_SIZE + 1];
